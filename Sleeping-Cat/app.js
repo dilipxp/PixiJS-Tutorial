@@ -1,9 +1,6 @@
 PIXI.utils.sayHello();
 
-// let app = new PIXI.Application({width: 256, height: 256});
-// document.getElementById('cat').appendChild(app.view);
-
-var renderer = new PIXI.autoDetectRenderer(512, 512, {
+var renderer = new PIXI.autoDetectRenderer({
     transparent: true,
     backgroundColor: 0xDEFAFE,
     resolution: 1,
@@ -14,8 +11,6 @@ document.getElementById('cat').appendChild(renderer.view);
 var stage = new PIXI.Container();
 
 const loader = new PIXI.Loader();
-// const loader = PIXI.Loader.shared;
-// var loader = PIXI.loader;
 
   loader
     .add('cat', 'images/cat.png')
@@ -24,7 +19,6 @@ const loader = new PIXI.Loader();
 var cat;
 
 function setup() {
-    // let resources = PIXI.loader.resources;
 
     cat = new PIXI.Sprite(
       loader.resources["cat"].texture
